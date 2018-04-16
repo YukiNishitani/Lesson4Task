@@ -25,13 +25,12 @@ public class Boss : MonoBehaviour
     }
 
     // 魔法攻撃用の関数
-    public void Magic()
-    {
-        mp -= 5;
-        Debug.Log("魔法攻撃をした。残りMPは" + mp);
-        if (mp < 3)
-        {
+    public void Magic(int requireMp){
+        if (mp < requireMp){
             Debug.Log("MPが足りないため魔法が使えない。");
+        }else{
+            mp -= requireMp;
+            Debug.Log("魔法攻撃をした。残りMPは" + mp);
         }
     }
 
